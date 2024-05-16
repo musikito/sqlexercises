@@ -11,19 +11,15 @@ const connection = mysql.createConnection({
 
 
 
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to the database');
-});
 
-// // Connect to the database
-// connection.connect((err) => {
-//   if (err) {
-//     console.error('Error connecting to the database:', err.stack);
-//     return;
-//   }
-//   console.log('Connected to the database.');
-// });
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err.stack);
+    return;
+  }
+  console.log('Connected to the database.');
+});
 
 // Function to add a new employee
 function addEmployee(firstName, lastName, department, jobTitle, startDate, endDate, salary) {
